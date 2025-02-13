@@ -1,1 +1,36 @@
-@import "tailwindcss"
+@import 'tailwindcss';
+
+@layer base {
+  :root {
+    --color-text-primary: #fff;
+
+    --text-heading-primary: 64px;
+    --text-heading-secondary: 48px;
+    --text-body-primary: 32px;
+    --text-body-secondary: 24px;
+
+    --color-logo-light: #fff;
+    --color-logo-dark: #808080;
+  }
+
+  [data-theme='light'] {
+    --color-text-secondary: #e0e0e0;
+
+    --color-bg-primary: linear-gradient(to right bottom, #121212, #1a1a1a);
+    --color-bg-secondary: #1e1e1e;
+  }
+
+  [data-theme='dark'] {
+    --color-text-secondary: #ccc;
+
+    --color-bg-primary: linear-gradient(to right bottom, #292929, #3a3a3a);
+    --color-bg-secondary: #333333;
+  }
+}
+
+.test-box {
+  height: 200px;
+  width: 200px;
+  border: 1px solid #fff;
+  border-radius: 10px;
+}
