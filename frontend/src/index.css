@@ -4,8 +4,8 @@
   :root {
     --color-text-primary: #fff;
 
-    --text-heading-primary: 64px;
-    --text-heading-secondary: 48px;
+    --text-heading-primary: 2.2rem;
+    --text-heading-secondary: 1.8rem;
     --text-body-primary: 32px;
     --text-body-secondary: 24px;
 
@@ -16,15 +16,15 @@
   [data-theme='light'] {
     --color-text-secondary: #e0e0e0;
 
-    --color-bg-primary: linear-gradient(to right bottom, #121212, #1a1a1a);
-    --color-bg-secondary: #1e1e1e;
+    --color-bg-primary: linear-gradient(to right bottom, #292929, #3a3a3a);
+    --color-bg-secondary: #333333;
   }
 
   [data-theme='dark'] {
     --color-text-secondary: #ccc;
 
-    --color-bg-primary: linear-gradient(to right bottom, #292929, #3a3a3a);
-    --color-bg-secondary: #333333;
+    --color-bg-primary: linear-gradient(to right bottom, #121212, #1a1a1a);
+    --color-bg-secondary: #1e1e1e;
   }
 }
 
