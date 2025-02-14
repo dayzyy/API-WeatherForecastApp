@@ -43,3 +43,7 @@
   font-size: var(--text-body-secondary) !important;
   color: var(--color-text-secondary);
 }
+
+* {
+  transition: ease .1s;
+}
