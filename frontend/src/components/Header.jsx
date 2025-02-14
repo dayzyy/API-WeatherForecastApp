@@ -4,7 +4,7 @@ import { FaCloudShowersHeavy } from "react-icons/fa";
 import { useState, useEffect } from "react";
 
 export default function Header() {
-  const [theme, setTheme] = useState(localStorage.getItem('theme') || 'light')
+  const [theme, setTheme] = useState(localStorage.getItem('theme') || 'dark')
 
   useEffect(_ => {
     document.documentElement.setAttribute('data-theme', theme)
