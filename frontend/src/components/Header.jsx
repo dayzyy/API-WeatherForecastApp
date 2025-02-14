@@ -1,4 +1,5 @@
 import { FaCloudSun } from "react-icons/fa";
+import { FaCloudMoon } from "react-icons/fa";
 import { FaCloudShowersHeavy } from "react-icons/fa";
 import { FaMoon } from "react-icons/fa";
 import { FaSun } from "react-icons/fa6";
@@ -22,7 +23,8 @@ export default function Header() {
   return (
     <div className="w-full py-4 md:px-4 flex justify-between md:absolute md:top-0 md:left-0">
       <div onClick={_ => navigate('/')} className="flex gap-1 cursor-pointer">
-        <FaCloudSun className="text-[var(--color-logo-light)]" style={{fontSize: 'var(--text-heading-primary)'}}/>
+        <FaCloudSun className={`text-[var(--color-logo-light)] ${theme != 'light' && 'absolute opacity-0 -translate-y-10'}`} style={{fontSize: 'var(--text-heading-primary)'}}/>
+        <FaCloudMoon className={`text-[var(--color-logo-light)] ${theme != 'dark' && 'absolute opacity-0'}`} style={{fontSize: 'var(--text-heading-primary)'}}/>
         <div className="flex relative">
           <p className="text-[var(--color-logo-light)] font-bold" style={{fontSize: 'var(--text-heading-primary)'}}>Weather</p>
           <p className="text-[var(--color-logo-dark)] font-bold" style={{fontSize: 'var(--text-heading-primary)'}}>API</p>
