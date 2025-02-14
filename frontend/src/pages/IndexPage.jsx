@@ -1,7 +1,8 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+
 import { FaCloud } from "react-icons/fa";
 import { IoSearch } from "react-icons/io5";
-import { useNavigate } from "react-router-dom";
 
 export default function IndexPage() {
   const [location, setLocation] = useState('')
@@ -14,12 +15,12 @@ export default function IndexPage() {
     }
 
     if (event.key === 'Enter') {
-      navigate(`/${location}`)
+      navigate(`/${encodeURIComponent(location)}`)
     }
   }
 
   return (
-    <div className= "rounded-xl md:w-[500px] md:p-4 md:bg-[var(--color-bg-secondary)] flex flex-col gap-10">
+    <div className= "rounded-[20px] md:w-[500px] md:p-4 md:bg-[var(--color-bg-secondary)] flex flex-col gap-10">
       <p className="text-[var(--color-text-primary)] font-bold" style={{fontSize: 'var(--text-heading-secondary)'}}>Find out the weather forecast at your location!</p>
       <div className="self-center relative w-fit">
         <FaCloud className="text-white text-[9rem]"/>
