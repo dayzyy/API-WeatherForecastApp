@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 
 import StatisticsRow from "../components/StatisticsRow";
@@ -7,10 +7,15 @@ import Loading from "../components/Loading";
 import WEATHER_ICONS from "../constants/weatherIcons";
 import fetch_weather from "../services/weatherService";
 
+import { IoMdArrowBack, IoMdArrowRoundBack } from "react-icons/io";
+import { FaBackspace } from "react-icons/fa";
+import { IoIosBackspace } from "react-icons/io";
+
 export default function WeatherInfoPage() {
   const { location } = useParams()
   const [info, setInfo] = useState(null)
   const [error, setError] = useState('')
+  const navigate = useNavigate()
 
   useEffect(_ => {
     const get_weatcher = async _ => {
@@ -29,7 +34,11 @@ export default function WeatherInfoPage() {
 
   return (
     <div className= "rounded-[20px] md:py-4 md:px-12 md:bg-[var(--color-bg-secondary)] flex flex-col items-center gap-10">
-      <p className="text-[var(--color-text-primary)] font-bold" style={{fontSize: 'var(--text-heading-secondary)'}}>{info ? info.location : location}</p>
+      <div className="w-full flex flex-col">
+        <FaBackspace onClick={_ => navigate('/')} className="self-start text-[2.5rem] text-[var(--color-text-secondary)] cursor-pointer"/>
+
+        <p className="self-center text-[var(--color-text-primary)] font-bold" style={{fontSize: 'var(--text-heading-secondary)'}}>{info ? info.location : location}</p>
+      </div>
 
       {error && <p className="text-[var(--color-text-secondary)]" style={{fontSize: "var(--text-body-primary)"}}>{error}</p>}
 

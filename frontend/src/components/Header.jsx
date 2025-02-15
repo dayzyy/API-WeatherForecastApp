@@ -32,7 +32,7 @@ export default function Header() {
         </div>
       </div>
 
-      <div className="relative w-12 md:w-32 h-12 md:border border-[var(--color-text-secondary)] rounded-2xl flex items-center justify-center md:justify-between p-4">
+      <div className="relative w-12 md:w-32 h-12 border border-[#6B6B6B] rounded-2xl flex items-center justify-center md:justify-between p-4">
         <FaMoon onClick={toggle_theme} className={`absolute md:static text-[var(--color-logo-dark)] text-[1.7rem] cursor-pointer ${theme != 'dark' && 'translate-x-12 opacity-0'}`}/>
         <FaSun onClick={toggle_theme} className={`absolute md:static text-[var(--color-logo-light)] text-[1.7rem] cursor-pointer ${theme != 'light' && '-translate-x-12 opacity-0'}`}/>
       </div>
