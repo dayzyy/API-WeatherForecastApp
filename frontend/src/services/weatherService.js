@@ -7,16 +7,7 @@ const fetch_weather = async location => {
     console.log(data)
 
     if (response.ok) {
-      return {
-        condition: data.current.condition.text,
-        temperature: data.current.temp_c,
-        feels_like: data.current.feelslike_c,
-        humidity: data.current.humidity,
-        wind_speed: data.current.wind_kph,
-        sunrise: data.forecast.forecastday[0].astro.sunrise,
-        sunset: data.forecast.forecastday[0].astro.sunset,
-        location: `${data.location.name}/${data.location.country}`
-      }
+      return data
     }
     else if (response.status === 400){
       throw new Error(data.error.message)
