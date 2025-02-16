@@ -10,7 +10,9 @@
     --text-body-secondary: 1rem;
 
     --color-logo-light: #fff;
+    --color-logo-light-hover: #E4EEFF;
     --color-logo-dark: #808080;
+    --color-logo-dark-hover: #9b9b9b;
   }
 
   [data-theme='light'] {
@@ -44,6 +46,10 @@
   color: var(--color-text-secondary);
 }
 
-* {
-  transition: ease .1s;
+#logo:hover .lighty {
+  color: var(--color-logo-light-hover)
+}
+
+#logo:hover .darky {
+  color: var(--color-logo-dark-hover) !important;
 }

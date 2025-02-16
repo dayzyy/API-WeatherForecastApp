@@ -7,7 +7,7 @@ import Header from './components/Header.jsx'
 
 createRoot(document.getElementById('root')).render(
   <Router>
-    <div style={{background: "var(--color-bg-primary)"}} className="h-screen w-screen flex flex-col gap-12 md:grid md:place-items-center px-4 overflow-x-hidden">
+    <div style={{background: "var(--color-bg-primary)"}} className="h-screen w-screen flex flex-col gap-12 duration-300 ease-in-out md:grid md:place-items-center px-4 overflow-x-hidden">
       <Header/>
       <App />
     </div>

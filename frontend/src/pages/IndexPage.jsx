@@ -20,7 +20,7 @@ export default function IndexPage() {
   }
 
   return (
-    <div className= "rounded-[20px] md:w-[500px] md:p-4 md:bg-[var(--color-bg-secondary)] flex flex-col gap-10">
+    <div className= "rounded-[20px] duration-300 ease-in-out md:w-[500px] md:p-4 md:bg-[var(--color-bg-secondary)] flex flex-col gap-10">
       <p className="text-[var(--color-text-primary)] font-bold" style={{fontSize: 'var(--text-heading-secondary)'}}>Find out the weather forecast at your location!</p>
       <div className="self-center relative w-fit">
         <FaCloud className="text-white text-[9rem]"/>
@@ -30,7 +30,7 @@ export default function IndexPage() {
         <input value={location} onChange={e => setLocation(e.target.value)} onKeyDown={e => handle_enter(e)}
           id="location" placeholder="" type="text" className="outline-none self-end w-full h-5/6 text-white font-bold"
         />
-        <label id="location_label" htmlFor="location" className="absolute text-white duration-75 ease" style={{fontSize: 'var(--text-body-primary)'}}>Enter location</label>
+        <label id="location_label" htmlFor="location" className="absolute text-white duration-75 ease-in-out" style={{fontSize: 'var(--text-body-primary)'}}>Enter location</label>
       </div>
     </div>
   )
