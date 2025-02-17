@@ -60,7 +60,7 @@ export default function WeatherInfoPage() {
           icon_type={info.current.condition.text.trim().toLowerCase()}
           main_rows={[
             <StatisticsRow asset='Condition' value={info.current.condition.text}/>,
-            <StatisticsRow asset='Temprture' value={`${info.current.temp_c}°`}/>,
+            <StatisticsRow asset='Temperature' value={`${info.current.temp_c}°`}/>,
             <StatisticsRow asset='Feels like' value={`${info.current.feelslike_c}°`}/>
           ]}
           additional_rows={[
@@ -82,7 +82,7 @@ export default function WeatherInfoPage() {
               icon_type={fr.day.condition.text.trim().toLowerCase()}
               main_rows={[
                 <StatisticsRow asset='Condition' value={fr.day.condition.text}/>,
-                <StatisticsRow asset='Tempreture' value={`${fr.day.avgtemp_c}°`}/>,
+                <StatisticsRow asset='Temperature' value={`${fr.day.avgtemp_c}°`}/>,
               ]}
               additional_rows={[
                 <StatisticsRow asset='Humidity' value={fr.day.avghumidity}/>,
