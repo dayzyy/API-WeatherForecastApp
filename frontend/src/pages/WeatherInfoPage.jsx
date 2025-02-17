@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 
 import StatisticsRow from "../components/StatisticsRow";
@@ -9,8 +9,7 @@ import fetch_weather from "../services/weatherService";
 
 import { MdNavigateNext } from "react-icons/md";
 import { MdNavigateBefore } from "react-icons/md";
-import { IoCloudOffline } from "react-icons/io5";
-import WEATHER_ICONS from "../constants/weatherIcons";
+import { FaBackspace } from "react-icons/fa";
 
 export default function WeatherInfoPage() {
   const { location } = useParams()
@@ -19,6 +18,7 @@ export default function WeatherInfoPage() {
   const [pageTracker, setPageTracker] = useState(-1)
   const [days, setDays] = useState(1)
   const [loading, setLoading] = useState(false)
+  const navigate = useNavigate()
 
   useEffect(_ => {
     const get_weather = async _ => {
@@ -44,7 +44,9 @@ export default function WeatherInfoPage() {
   return (
     <div className="relative flex flex-col gap-4">
       {!info &&
-        <div className="rounded-[20px] md:w-[300px] md:h-[300px] md:py-4 md:px-12 md:bg-[var(--color-bg-secondary)] grid place-items-center gap-10">
+        <div className="rounded-[20px] md:w-[300px] md:h-[300px] md:py-4 md:px-12 md:bg-[var(--color-bg-secondary)] flex flex-col items-center gap-10">
+          <FaBackspace onClick={_ => navigate('/')} className="self-start text-[2.5rem] text-[var(--color-text-secondary)] hover:text-[var(--color-logo-dark)] cursor-pointer"/>
+
           <p className="text-[var(--color-text-primary)] font-bold" style={{fontSize: "var(--text-heading-secondary)"}}>{location}</p>
           {!error && <Loading/>}
           {error && <p className="text-[var(--color-text-secondary)]" style={{fontSize: "var(--text-body-primary)"}}>{error}</p>}
@@ -55,7 +57,7 @@ export default function WeatherInfoPage() {
         <WeatherCard
           location={`${info.location.country}/${info.location.name}`}
           date={`Today, ${new Date(info.forecast.forecastday[0].date).toLocaleString('en-US', {weekday: 'long'})}`}
-          icon={WEATHER_ICONS[info.current.condition.text.toLowerCase()] || <IoCloudOffline/>}
+          icon_type={info.current.condition.text.trim().toLowerCase()}
           main_rows={[
             <StatisticsRow asset='Condition' value={info.current.condition.text}/>,
             <StatisticsRow asset='Temprture' value={`${info.current.temp_c}°`}/>,
@@ -77,7 +79,7 @@ export default function WeatherInfoPage() {
               key={fr.date}
               location={`${info.location.country}/${info.location.name}`}
               date={`${forecastDays[index].date}, ${new Date(forecastDays[index].date).toLocaleString('en-US', {weekday: 'long'})}`}
-              icon={WEATHER_ICONS[fr.day.condition.text.toLowerCase()] || <IoCloudOffline/>}
+              icon_type={fr.day.condition.text.trim().toLowerCase()}
               main_rows={[
                 <StatisticsRow asset='Condition' value={fr.day.condition.text}/>,
                 <StatisticsRow asset='Tempreture' value={`${fr.day.avgtemp_c}°`}/>,

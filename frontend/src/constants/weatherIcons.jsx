@@ -3,12 +3,10 @@ import { IoMdRainy, IoMdThunderstorm } from "react-icons/io";
 import { MdCloudQueue } from "react-icons/md";
 import { WiDayRainMix, WiRaindrops, WiSnowflakeCold, WiDust, WiSandstorm } from "react-icons/wi";
 
-import { IoCloudOffline } from "react-icons/io5";
-
 const WEATHER_ICONS = {
   "sunny": <FaSun />, 
   "clear": <FaSun />, 
-  "partly cloudy": <FaCloud />, 
+  "partly cloudy": <FaCloud />,
   "cloudy": <FaCloud />, 
   "overcast": <MdCloudQueue />, 
   "mist": <FaSmog />, 

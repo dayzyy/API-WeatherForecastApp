@@ -1,10 +1,12 @@
-import WEATHER_ICONS from "../constants/weatherIcons";
 import { FaBackspace } from "react-icons/fa";
 import { IoCloudOffline } from "react-icons/io5";
 import { useNavigate } from "react-router-dom";
 
-export default function WeatherCard({location, date, icon, main_rows, additional_rows, focused}) {
+import WEATHER_ICONS from "../constants/weatherIcons";
+
+export default function WeatherCard({location, date, icon_type, main_rows, additional_rows, focused}) {
   const navigate = useNavigate()
+  console.log(WEATHER_ICONS)
 
   return (
     <div 
@@ -24,7 +26,7 @@ export default function WeatherCard({location, date, icon, main_rows, additional
       <div key={date} className={`flex flex-col gap-10`}>
           <div className="w-fit flex gap-10">
             <div className="text-[8rem] text-white">
-              {WEATHER_ICONS[icon] || <IoCloudOffline/>}
+              {WEATHER_ICONS[icon_type] || <IoCloudOffline/>}
             </div>
 
             <div className="flex flex-col gap-2 justify-center">
