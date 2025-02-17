@@ -68,4 +68,8 @@ npm run dev
 
 ![Forecast for the whole week page](screenshots/infoPageMore.png)
 
+![Phone version index page](screenshots/phoneVersionIndex.png)
+
+![Phone version more page](screenshots/phoneVersionMore.png)
+
 **@dayzyyiwnl**
