@@ -1,4 +1,4 @@
-### Weather Forecast Application
+# Weather Forecast Application
 
 This is a weather forecast application that uses an external api to fetch weather data for requested location.
 
@@ -54,6 +54,7 @@ VITE_WEATHER_API_KEY=<YOUR_API_KEY>
 ```
 
 5. **Run the server**. Everything is set up now. Run the server and find out weather forecast at your location! (runs on localhost:3000 by default)
+
 (API-WeatherForecastApp/frontend/)
 ```
 npm run dev
