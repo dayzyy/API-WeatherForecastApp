@@ -62,14 +62,22 @@ npm run dev
 
 ## Screenshots
 
-![Index page](screenshots/indexPage.png)
+### Desktop
 
-![Forecast for current day page](screenshots/infoPage.png)
+![Home Page](screenshots/desktop/home1.png)
+![Home Page](screenshots/desktop/home2.png)
 
-![Forecast for the whole week page](screenshots/infoPageMore.png)
+![Info Page](screenshots/desktop/info1.png)
+![Info Page](screenshots/desktop/info2.png)
+![Info Page](screenshots/desktop/info3.png)
 
-![Phone version index page](screenshots/phoneVersionIndex.png)
+### Mobile
 
-![Phone version more page](screenshots/phoneVersionMore.png)
+<img src="screenshots/mobile/home1.png" width="300" style="border: 2px solid black; border-radius: 10px;">
+<img src="screenshots/mobile/home2.png" width="300" style="border: 2px solid black; border-radius: 10px;">
+
+<img src="screenshots/mobile/info1.png" width="300" style="border: 2px solid black; border-radius: 10px;">
+<img src="screenshots/mobile/info2.png" width="300" style="border: 2px solid black; border-radius: 10px;">
+<img src="screenshots/mobile/info3.png" width="300" style="border: 2px solid black; border-radius: 10px;">
 
 **@dayzyyiwnl**
